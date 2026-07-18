@@ -3,7 +3,7 @@
 Questo è il mio portfolio professionale da **Junior Full Stack Developer**. Il sito è progettato per presentare le mie competenze, il mio percorso formativo e i progetti che ho realizzato.
 
 ## 🚀 Live Demo
-Puoi vedere il sito web completato qui: [Lucrezia Giordano Portfolio](https://lucreziagiordano001-coder.github.io/mycvpage/)
+Puoi vedere il sito web completato qui: [Lucrezia Giordano Portfolio](https://lucreziagiordano001-coder.github.io/my-cv-page/)
 
 ## 🛠️ Tecnologie Utilizzate
 * **HTML5 / CSS3** (Semantica ed accessibilità)
