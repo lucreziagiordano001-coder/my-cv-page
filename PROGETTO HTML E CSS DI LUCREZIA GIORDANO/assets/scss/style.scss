@@ -1,0 +1,265 @@
+/* --- VARIABILI SASS (Design System Energetico) --- */
+$gradient-primary: linear-gradient(135deg, #ff007f 0%, #7928ca 50%, #00dfd8 100%);
+$gradient-tech: linear-gradient(135deg, #0070f3 0%, #00dfd8 100%);
+$gradient-lang: linear-gradient(135deg, #ff007f 0%, #ff4e50 100%);
+
+$color-bg: #f8fafc;
+$color-card: #ffffff;
+$color-text-main: #0f172a;
+$color-text-muted: #475569;
+$radius-lg: 24px;
+$radius-md: 16px;
+$shadow-premium: 0 10px 30px -10px rgba(121, 40, 202, 0.15);
+
+/* --- RESET & GLOBALS --- */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: $color-bg;
+    color: $color-text-main;
+    overflow-x: hidden;
+}
+
+/* Decorazioni Sfondo */
+.bg-blobs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+
+    .blob {
+        position: absolute;
+        background: $gradient-primary;
+        opacity: 0.06;
+        filter: blur(80px);
+        border-radius: 50%;
+        
+        &-1 { width: 500px; height: 500px; top: -100px; right: -100px; }
+        &-2 { width: 400px; height: 400px; top: 600px; left: -100px; }
+    }
+}
+
+/* --- NAVBAR CUSTOMIZZATA --- */
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+
+    .nav-logo {
+        font-weight: 800;
+        font-size: 1.3rem;
+        background: $gradient-primary;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-link {
+        color: $color-text-muted !important;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+
+        &:hover, &.active {
+            color: #7928ca !important;
+        }
+    }
+
+    .btn-nav-contact {
+        background: $gradient-primary;
+        color: white !important;
+        padding: 6px 20px !important;
+        border-radius: 20px;
+        
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(121, 40, 202, 0.2);
+        }
+    }
+}
+
+/* --- TITOLI DI SEZIONE --- */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 40%;
+        height: 5px;
+        background: $gradient-primary;
+        border-radius: 10px;
+    }
+}
+
+/* --- HERO COMPONENTI --- */
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+
+    span {
+        background: $gradient-primary;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    @media (max-width: 768px) {
+        font-size: 2.8rem;
+    }
+}
+
+.hero-tagline {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $color-text-muted;
+}
+
+.hero-card-interactive {
+    background: $gradient-primary;
+    padding: 35px;
+    border-radius: $radius-lg;
+    color: white;
+    box-shadow: 0 20px 40px rgba(121, 40, 202, 0.25);
+    transform: rotate(-2px);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: rotate(0deg) scale(1.02);
+    }
+}
+
+/* --- BOTTONI --- */
+.btn-gradient {
+    background: $gradient-primary;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(121, 40, 202, 0.2);
+    }
+}
+
+/* --- COMPETENZE CARDS --- */
+.card-skill {
+    background: $color-card;
+    border-radius: $radius-md;
+    padding: 35px;
+    box-shadow: $shadow-premium;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &.tech:hover { border-color: #00dfd8; }
+    &.lang:hover { border-color: #ff007f; }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    &.tech .card-icon { background: $gradient-tech; }
+    &.lang .card-icon { background: $gradient-lang; }
+}
+
+.pill {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: #f1f5f9;
+    color: $color-text-main;
+
+    &.highlight {
+        background: $gradient-primary;
+        color: white;
+    }
+}
+
+/* --- TIMELINE PERCORSO --- */
+.block-item {
+    background: $color-card;
+    padding: 25px;
+    border-radius: $radius-md;
+    box-shadow: $shadow-premium;
+    border-left: 6px solid #7928ca;
+    transition: transform 0.2s;
+
+    &:hover { transform: scale(1.01); }
+    &.edu { border-left-color: #00dfd8; .block-location { color: #0070f3; } }
+    &.exp { border-left-color: #ff007f; .block-location { color: #ff007f; } }
+
+    .block-meta {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: $color-text-muted;
+    }
+
+    .block-location {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+/* --- COMPONENTI PAGINA CONTATTI --- */
+.contact-card {
+    background: $color-card;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-premium;
+}
+
+.custom-input {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px;
+    
+    &:focus {
+        border-color: #7928ca;
+        box-shadow: 0 0 0 0.25rem rgba(121, 40, 202, 0.1);
+    }
+}
+
+/* --- FOOTER --- */
+.footer {
+    background: $gradient-primary;
+    color: white;
+    padding: 60px 0;
+
+    .footer-contacts span {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 8px 18px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+    }
+
+    .copy {
+        margin-top: 30px;
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+}
